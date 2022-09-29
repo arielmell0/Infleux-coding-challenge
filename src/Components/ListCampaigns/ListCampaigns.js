@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { getCampaign } from '../../services/campaignsService.js'
-
-const response = getCampaign()
 
 export const ListCampaigns = (object) => {
   return (

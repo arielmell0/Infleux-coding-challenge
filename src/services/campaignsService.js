@@ -1,11 +1,6 @@
-import axios from 'axios'
+import fetch from 'node-fetch'
 
-const url = 'http://localhost:3333/fetch'
-
-export const getCampaign = async () => {
-    const response = axios.get(url)
-
-    return console.log(response.data)
-}
-
-console.log(getCampaign())
+export const getCampaign = fetch('http://localhost:3333/fetch')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(e => console.log('ops, um erro ocorreu'))
