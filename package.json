@@ -1,6 +1,7 @@
 {
   "name": "console-infleux",
   "version": "0.1.0",
+  "type": "module",
   "engines": {
     "node": "16.13.2"
   },
@@ -10,7 +11,9 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
+    "axios": "^0.27.2",
     "dotenv": "^16.0.2",
+    "node-fetch": "^3.2.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^5.3.3",

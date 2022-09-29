@@ -1,10 +1,10 @@
-import Menu from '../Menu/Menu';
-import GlobalStyle from '../../globalStyles';
+import Menu from '../Menu/Menu.js';
+import GlobalStyle from '../../globalStyles.js';
 import './App.css';
-import { CreateCampaign } from '../CreateCampaign/CreateCampaign'
-import { ListCampaigns } from '../ListCampaigns/ListCampaigns';
+import { CreateCampaign } from '../CreateCampaign/CreateCampaign.js'
+import { ListCampaigns } from '../ListCampaigns/ListCampaigns.js';
 import { Switch, Route } from 'react-router-dom'
-import Home from '../Home/Home';
+import Home from '../Home/Home.js';
 
 
 function App() {

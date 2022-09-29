@@ -1,4 +1,4 @@
-import { Container } from '../Container/Container'
+import { Container } from '../Container/Container.js'
 import styled from 'styled-components'
 
 export const CreateCampaign = () => {
