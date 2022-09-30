@@ -1,6 +1,8 @@
-import fetch from 'node-fetch'
+import axios from "axios";
 
-export const getCampaign = fetch('http://localhost:3333/fetch')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(e => console.log('ops, um erro ocorreu'))
+
+const api = axios.create({
+    baseURL: 'http://localhost:3333/'
+})
+
+export default api;
