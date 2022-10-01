@@ -18,7 +18,23 @@ exports.deleteCampaign = exports.patchCampaign = exports.getCampaign = exports.p
 // area (country) -> bid (price) -> publisher content (who will atract leads with the content)
 const CampaignModel_1 = __importDefault(require("../Models/CampaignModel"));
 const postCampaign = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { name, advertiser, keyWords, bid, conversionType, target } = req.body;
+    const { name, advertiser, bid, conversionType, target } = req.body;
+    // Validações
+    if (!name) {
+        return res.status(422).json({ message: 'the name of the campaign is required.' });
+    }
+    if (!advertiser) {
+        return res.status(422).json({ message: 'the e-mail of the campaign is required.' });
+    }
+    if (!bid) {
+        return res.status(422).json({ message: 'the bid of the campaign is required.' });
+    }
+    if (!conversionType) {
+        return res.status(422).json({ message: 'the conversion type of the campaign is required.' });
+    }
+    if (!target) {
+        return res.status(422).json({ message: 'A senha é obrigatório!' });
+    }
     const campaign = new CampaignModel_1.default({
         name,
         advertiser,

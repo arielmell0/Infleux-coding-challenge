@@ -5,8 +5,38 @@ import CampaignModel from "../Models/CampaignModel"
 import { Request, Response } from 'express'
 
 export const postCampaign = async (req: Request, res: Response) => {
-    const { name, advertiser, keyWords,
-         bid, conversionType, target } = req.body
+    interface Campaign {
+        name: string,
+        advertiser: string,
+        bid: number,
+        conversionType: "cpm" | "cpc" | "cpa",
+        target: string
+    }
+
+    const { name, advertiser,
+         bid, conversionType, target }: Campaign = req.body
+
+    // Validações
+    if(!name) {
+        return res.status(422).json({ message: 'the name of the campaign is required.'} )
+    }
+
+    if(!advertiser) {
+        return res.status(422).json({ message: 'the e-mail of the campaign is required.'} )
+    }
+
+    if(!bid) {
+        return res.status(422).json({ message: 'the bid of the campaign is required.'} )
+    }
+
+    if(!conversionType) {
+        return res.status(422).json({ message: 'the conversion type of the campaign is required.'} )
+    }
+
+    if(!target) {
+        return res.status(422).json({ message: 'A senha é obrigatório!'} )
+    }
+
 
     const campaign = new CampaignModel({
         name,

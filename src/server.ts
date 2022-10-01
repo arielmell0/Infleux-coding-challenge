@@ -12,7 +12,6 @@ app.use(express.json(), urlencoded({ extended: true }))
 
 app.use(route)
 
-
 mongoose.connect(process.env.CONNECTIONSTRING as string)
     .then(() => {
         app.emit('databaseConnected')
