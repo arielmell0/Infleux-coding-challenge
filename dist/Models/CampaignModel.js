@@ -8,7 +8,6 @@ const mongoose_1 = require("mongoose");
 const CampaignSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     advertiser: { type: String, required: true },
-    keyWords: { type: [String], required: true },
     bid: { type: Number, required: true },
     conversionType: { type: String, required: true },
     target: { type: String, required: true }

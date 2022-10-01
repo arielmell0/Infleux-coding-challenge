@@ -7,7 +7,6 @@ import { Schema, model } from 'mongoose'
 interface Campaign {
     name: string,
     advertiser: string,
-    keyWords: string[],
     bid: number,
     conversionType: 'cpm' | 'cpf' | 'cpi',
     target: string
@@ -16,7 +15,6 @@ interface Campaign {
 const CampaignSchema = new Schema<Campaign>({
     name: { type: String, required: true },
     advertiser: { type: String, required: true },
-    keyWords: { type: [ String ], required: true },
     bid: { type: Number, required: true },
     conversionType: { type: String, required: true },
     target: { type: String, required: true }

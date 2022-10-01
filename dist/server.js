@@ -29,9 +29,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const express_1 = __importStar(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const routes_1 = __importDefault(require("./routes"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
 app.use(express_1.default.json(), (0, express_1.urlencoded)({ extended: true }));
 app.use(routes_1.default);
 mongoose_1.default.connect(process.env.CONNECTIONSTRING)

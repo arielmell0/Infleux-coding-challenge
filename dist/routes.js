@@ -8,4 +8,6 @@ route.get('/', (req, res) => res.status(200).json({ message: 'API running!' }));
 // fetch route
 route.get('/fetch', BestCampaignController_1.getCampaign);
 route.post('/fetch', BestCampaignController_1.postCampaign);
+route.patch('/fetch/:id', BestCampaignController_1.patchCampaign);
+route.delete('/fetch/:id', BestCampaignController_1.deleteCampaign);
 exports.default = route;
