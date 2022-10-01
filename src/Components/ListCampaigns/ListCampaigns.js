@@ -9,30 +9,32 @@ export const ListCampaigns = (object) => {
       api.get('fetch').then(({data}) => {
         setListCampaigns(data)
       });
-  }, ['']);
-
-  console.log(listCampaigns)
+  }, []);
 
   return (
     <FormGet>
       <table>
-        <tr>
-          <th>Campaign name</th>
-          <th>Advertiser</th>
-          <th>BID</th>
-          <th>Conversion type</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Campaign name</th>
+            <th>Advertiser</th>
+            <th>BID</th>
+            <th>Conversion type</th>
+          </tr>
+        </thead>
 
-        <tr>
-          {
-            listCampaigns.map((item, index) => (
-              <>
-                <li key={index}>{item.name}</li>
-                <li key={index}>{item.name}</li>
-              </>
-            ))
-          }
-        </tr>
+        <tbody>
+            {
+              listCampaigns.map((item, index) => (
+                <tr>
+                  <td key={ index }>{ item.name }</td>
+                  <td key={ index }>{ item.advertiser }</td>
+                  <td key={ index }>{ item.bid }</td>
+                  <td key={ index }>{ item.conversionType }</td>
+                </tr>
+              ))
+            }
+        </tbody>
 
       </table>
     </FormGet>
