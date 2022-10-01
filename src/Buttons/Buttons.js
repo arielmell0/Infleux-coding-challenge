@@ -10,15 +10,25 @@ export const SubmitButton = styled.button`
   color: white;
   text-align: center;
   margin-top: 40px;
+
+  &:hover {
+    cursor: pointer;
+    color: #ffff;
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
 `;
 
 export const DeleteButton = styled(SubmitButton)`
+  width: 100px;
   font-size: 1rem;
   background-color: red;
   color: white;
 `;
 
 export const EditButton = styled(SubmitButton)`
+  width: 100px;
   font-size: 1rem;
   background-color: orange;
   color: white;

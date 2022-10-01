@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from 'react'
 import api from "../../services/campaignsService.js";
+import { DeleteButton, EditButton } from "../../Buttons/Buttons.js";
 
 export const ListCampaigns = (object) => {
   const [listCampaigns, setListCampaigns] = useState([]);
@@ -20,6 +21,8 @@ export const ListCampaigns = (object) => {
             <th>Advertiser</th>
             <th>BID</th>
             <th>Conversion type</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
 
@@ -31,8 +34,8 @@ export const ListCampaigns = (object) => {
                   <td key={ item.name }>{ item.advertiser }</td>
                   <td key={ item.name }>{ item.bid }</td>
                   <td key={ item.name }>{ item.conversionType }</td>
-                  <td key={ item.name }><button>Editar</button></td>
-                  <td key={ item.name }><button>Deletar</button></td>
+                  <td key={ item.name }><EditButton>Editar</EditButton></td>
+                  <td key={ item.name }><DeleteButton>Deletar</DeleteButton></td>
                 </tr>
               ))
             }
