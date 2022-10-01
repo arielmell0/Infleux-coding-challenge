@@ -1,70 +1,126 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 💻 Sobre o projeto
 
-In the project directory, you can run:
+  
 
-### `npm start`.
+Projeto de uma api que possibilida anunciantes criarem uma campanha publicitária.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Criado durante o infleux conding challenge.
 
-### `npm test`
+## Como iniciar o projeto
+#### Nesse projeto eu usei o mongo atlas para conectar ao banco de dados, você deve criar uma váriavel de ambiente .env na raiz do projeto aonde irá colocar a string que o próprio mongo atlas irá lhe fornecer, assim você terá um servidor gratuito rodando na cloud. Apenas crie o seu banco de dados e depois conecte a sua aplicação como mostrado abaixo.
+<img  alt="mensagem api running"  src="https://s4.gifyu.com/images/api-infleux94a81790947f475d.gif"  width="1080px">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Após a conexão com o banco de dados basta rodar o comando npm start e você irá ver um log no terminal informando a porta e o status da conexão com o banco de dados.
+<img  alt="mensagem api running"  src="https://i.ibb.co/qmWg4rD/imagem-2022-10-01-180739744.png"  width="1080px">
 
-### `npm run build`
+  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧪 Testando a nossa API com o Insomnia
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Utilizando o [Insomnia](https://insomnia.rest/) na rota inicial da nossa aplicação e recebendo uma mensagem nos informando que a API está rodando.
 
-### `npm run eject`
+<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img  alt="mensagem api running"  src="https://uploaddeimagens.com.br/images/004/045/625/original/imagem_2022-10-01_173516979.png?1664656518"  width="1080px">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---------------------------------------------------------------------------------------------------------------------------------<br><br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  
 
-## Learn More
+#### Cadastrando uma campanha na nossa API seguindo a seguinte estrutura:
+#### method: POST, route: /fetch 
+````
+{
+	"name": "Nome da campanha",
+	"advertiser": "Nome do anunciante",
+	"bid": 55.5,
+	"conversionType": "cpm", (string literal ("cpm" | "cpc" | "cpi")
+	"target": "Brazil" (string)
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+````
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
 
-### Code Splitting
+<img  alt="cadastrando campanha"  src="https://uploaddeimagens.com.br/images/004/045/631/full/imagem_2022-10-01_174029178.png?1664656830"  width="1080px">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+</p>
 
-### Analyzing the Bundle Size
+---------------------------------------------------------------------------------------------------------------------------------<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  
 
-### Making a Progressive Web App
+#### Recebendo uma lista com todas as campanhas
+#### method: GET, route: /fetch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
 
-### Advanced Configuration
+<img  alt="recebendo dados atraves do get"  src="https://uploaddeimagens.com.br/images/004/045/628/full/imagem_2022-10-01_173934195.png?1664656775"  width="1080px">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+</p>
 
-### Deployment
+---------------------------------------------------------------------------------------------------------------------------------<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  
 
-### `npm run build` fails to minify
+#### Editando campanha
+#### method: PATCH, route: /fetch/:id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
+
+<img  alt="editando campanha pelo id"  src="https://uploaddeimagens.com.br/images/004/045/634/full/imagem_2022-10-01_174543356.png?1664657144"  width="1080px">
+
+</p>
+
+#### Deletando usuários
+#### method: DELETE, route: /fetch/:id
+
+<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
+
+<img  alt="buscando usuarios pelo id"  src="https://uploaddeimagens.com.br/images/004/045/636/full/imagem_2022-10-01_174750304.png?1664657271"  width="1080px">
+
+</p>
+
+  
+
+## 🛠 Tecnologias
+
+  ![NodeJS](https://img.shields.io/badge/NodeJS-16.13.2-green) ![npm](https://img.shields.io/badge/npm-8.1.2-purple) ![mongo](https://img.shields.io/badge/MongoDB-5.0.6-orange)
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+  
+
+####  [NodeJS](https://nodejs.org/), [Express](https://expressjs.com), [MongoDB](https://www.mongodb.com/)
+
+  
+
+> Veja o arquivo [package.json](https://github.com/arielmell0/Infleux-coding-challenge/blob/ad-server/package.json)
+
+  
+
+## 🦸 Autor
+
+<img  style="border-radius: 50%;"  src="https://media-exp1.licdn.com/dms/image/C4E03AQE8vZ3YZG56Jw/profile-displayphoto-shrink_800_800/0/1654872971971?e=1669852800&v=beta&t=B0ClFVkTDX4Rvvxgj6_eDV4Z9MAuCgpx1jMAVxOAoc8"  width="100px;"  alt=""/>
+
+#### Ariel Oliveira de Mello
+
+  
+
+[![Twitter Badge](https://img.shields.io/twitter/follow/Hellodarknes0?style=for-the-badge)](https://twitter.com/Hellodarknes0)
+
+  
+
+## 📝 Licença
+
+ 
+![mit license](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)
+Este projeto esta sobe a licença [MIT](./LICENSE) 
