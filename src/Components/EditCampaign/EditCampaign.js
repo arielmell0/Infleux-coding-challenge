@@ -3,10 +3,14 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 import api from '../../services/campaignsService.js'
 import { Container } from "../Container/Container.js";
-import { SubmitButton } from '../Buttons/Buttons.js';
+import { DeleteButton, SubmitButton } from '../Buttons/Buttons.js';
+import { ListCampaigns } from '../ListCampaigns/ListCampaigns.js';
 
-export const CreateCampaign = () => {
+export const EditCampaign = (props) => {
   const history = useHistory()
+
+  const idCampaign = props.match.params.id
+
   const [campaignName, setCampaignName] = useState()
   const [advertiser, setAdvertiser] = useState()
   const [keyWords, setKeyWords] = useState()
@@ -27,7 +31,7 @@ export const CreateCampaign = () => {
       bid: BID
     }
 
-    api.post('http://localhost:3333/fetch', data)
+    api.patch(`http://localhost:3333/fetch/${idCampaign}`, data)
     .then((data) => {
       setCampaignCreatedWithSucess(true)
 
@@ -74,10 +78,10 @@ export const CreateCampaign = () => {
           <input value={ target } onChange={(e) => setTarget(e.target.value)} id="target"></input>
         </FormDiv>
 
-        <SubmitButton type="submit">Create campaign</SubmitButton>
+        <SubmitButton type="submit">Edit</SubmitButton>
 
         { campaignCreatedWithSucess && (
-          <SucessFeedBack>Campaign created with sucess! </SucessFeedBack>
+          <SucessFeedBack>Campaign edited with sucess! </SucessFeedBack>
         )}
       </form>
     </Container>
@@ -97,5 +101,5 @@ const SucessFeedBack = styled.div`
   @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
   font-family: Roboto, sans-serif;
   font-size: 1.4rem;
-  color: green;
+  color: orange;
 `

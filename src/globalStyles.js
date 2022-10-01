@@ -26,6 +26,15 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.3rem;
     text-align: center;
   }
+
+  input, select {
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+
+  select {
+    height: 30px;
+  }
 `;
  
 export default GlobalStyle;

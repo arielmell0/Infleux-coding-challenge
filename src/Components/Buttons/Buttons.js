@@ -9,7 +9,9 @@ export const SubmitButton = styled.button`
   font-size: 1.3rem;
   color: white;
   text-align: center;
-  margin-top: 40px;
+  margin: 40px 0 20px 0;
+  border: none;
+  border-radius: 10px;
 
   &:hover {
     cursor: pointer;
@@ -25,6 +27,7 @@ export const DeleteButton = styled(SubmitButton)`
   font-size: 1rem;
   background-color: red;
   color: white;
+  margin: 10px 0 10px;
 `;
 
 export const EditButton = styled(SubmitButton)`
@@ -32,4 +35,5 @@ export const EditButton = styled(SubmitButton)`
   font-size: 1rem;
   background-color: orange;
   color: white;
+  margin: 10px 0 10px;
 `;

@@ -1,16 +1,23 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import { useState, useEffect } from 'react'
-import api from "../../services/campaignsService.js";
-import { DeleteButton, EditButton } from "../../Buttons/Buttons.js";
+import { useHistory } from "react-router-dom"
+import api from "../../services/campaignsService.js"
+import { DeleteButton, EditButton } from "../Buttons/Buttons.js"
 
 export const ListCampaigns = (object) => {
   const [listCampaigns, setListCampaigns] = useState([]);
+  const history = useHistory()
 
   useEffect( () => {
       api.get('fetch').then(({data}) => {
         setListCampaigns(data)
       });
   }, []);
+
+  const editCampaign = (id) => {
+    console.log(id)
+    history.push(`edit-campaign/${id}`)
+  }
 
   return (
     <FormGet>
@@ -29,13 +36,13 @@ export const ListCampaigns = (object) => {
         <tbody>
             {
               listCampaigns.map((item) => (
-                <tr>
-                  <td key={ item.name }>{ item.name }</td>
-                  <td key={ item.name }>{ item.advertiser }</td>
-                  <td key={ item.name }>{ item.bid }</td>
-                  <td key={ item.name }>{ item.conversionType }</td>
-                  <td key={ item.name }><EditButton>Editar</EditButton></td>
-                  <td key={ item.name }><DeleteButton>Deletar</DeleteButton></td>
+                <tr key={item._id}>
+                  <td>{ item.name }</td>
+                  <td>{ item.advertiser }</td>
+                  <td>{ item.bid }</td>
+                  <td>{ item.conversionType.toUpperCase() }</td>
+                  <td><EditButton onClick={ () => editCampaign(item._id) }>Editar</EditButton></td>
+                  <td><DeleteButton>Deletar</DeleteButton></td>
                 </tr>
               ))
             }
