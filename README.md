@@ -1,33 +1,29 @@
 
 
 ## 💻 Sobre o projeto
+Projeto de uma interface web que está conectada a uma api de campanhas de marketing
 
-  
-
-Projeto de uma api que possibilida anunciantes criarem uma campanha publicitária.
-
-  
-
-Criado durante o infleux conding challenge.
+Criado durante o infleux coding challenge.
 
 ## Como iniciar o projeto
-#### Nesse projeto eu usei o mongo atlas para conectar ao banco de dados, você deve criar uma váriavel de ambiente .env na raiz do projeto aonde irá colocar a string que o próprio mongo atlas irá lhe fornecer, assim você terá um servidor gratuito rodando na cloud. Apenas crie o seu banco de dados e depois conecte a sua aplicação como mostrado abaixo.
-<img  alt="mensagem api running"  src="https://s4.gifyu.com/images/api-infleux94a81790947f475d.gif"  width="1080px">
+#### Para iniciar a interface web basta rodar npm start, lembrando que todas as requisições dessa interface estão sendo feitas na porta 3333, caso você rode a api em outra porta deve ficar atento !
+<img  alt="mensagem api running"  src="https://i.ibb.co/st4NVM2/imagem-2022-10-01-181918911.png"  width="1080px">
 
 #### Após a conexão com o banco de dados basta rodar o comando npm start e você irá ver um log no terminal informando a porta e o status da conexão com o banco de dados.
 <img  alt="mensagem api running"  src="https://i.ibb.co/qmWg4rD/imagem-2022-10-01-180739744.png"  width="1080px">
 
   
 
-## 🧪 Testando a nossa API com o Insomnia
+## 🧪 Telas da nossa aplicação
 
   
 
-#### Utilizando o [Insomnia](https://insomnia.rest/) na rota inicial da nossa aplicação e recebendo uma mensagem nos informando que a API está rodando.
+#### Tela inicial apresentando uma mensagem amigável
+#### route '/'
 
 <p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
 
-<img  alt="mensagem api running"  src="https://uploaddeimagens.com.br/images/004/045/625/original/imagem_2022-10-01_173516979.png?1664656518"  width="1080px">
+<img  alt="mensagem api running"  src="https://uploaddeimagens.com.br/images/004/045/664/full/imagem_2022-10-01_182401909.png?1664659442"  width="1080px">
 
 </p>
 
@@ -35,22 +31,8 @@ Criado durante o infleux conding challenge.
 
   
 
-#### Cadastrando uma campanha na nossa API seguindo a seguinte estrutura:
-#### method: POST, route: /fetch 
-````
-{
-	"name": "Nome da campanha",
-	"advertiser": "Nome do anunciante",
-	"bid": 55.5,
-	"conversionType": "cpm", (string literal ("cpm" | "cpc" | "cpi")
-	"target": "Brazil" (string)
-}
-
-````
-
-<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
-
-<img  alt="cadastrando campanha"  src="https://uploaddeimagens.com.br/images/004/045/631/full/imagem_2022-10-01_174029178.png?1664656830"  width="1080px">
+#### Formulário responsável por criar uma campanha
+<img  alt="cadastrando campanha"  src="https://uploaddeimagens.com.br/images/004/045/666/full/imagem_2022-10-01_182700722.png?1664659621"  width="1080px">
 
 </p>
 
@@ -58,12 +40,12 @@ Criado durante o infleux conding challenge.
 
   
 
-#### Recebendo uma lista com todas as campanhas
-#### method: GET, route: /fetch
+#### Tela responsável por listar, editar e excluir uma campanha
+#### route: '/list-campaign'
 
 <p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
 
-<img  alt="recebendo dados atraves do get"  src="https://uploaddeimagens.com.br/images/004/045/628/full/imagem_2022-10-01_173934195.png?1664656775"  width="1080px">
+<img  alt="recebendo dados atraves do get"  src="https://uploaddeimagens.com.br/images/004/045/674/original/imagem_2022-10-01_185819813.png?1664661501">
 
 </p>
 
@@ -71,41 +53,14 @@ Criado durante o infleux conding challenge.
 
   
 
-#### Editando campanha
-#### method: PATCH, route: /fetch/:id
+#### Tela responsável por editar a campanha
+#### route: '/edit-campaign/:id'
 
 <p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
 
-<img  alt="editando campanha pelo id"  src="https://uploaddeimagens.com.br/images/004/045/634/full/imagem_2022-10-01_174543356.png?1664657144"  width="1080px">
+<img  alt="editando campanha pelo id"  src="https://uploaddeimagens.com.br/images/004/045/675/full/imagem_2022-10-01_185914585.png?1664661555"  width="1080px">
 
 </p>
-
-#### Deletando usuários
-#### method: DELETE, route: /fetch/:id
-
-<p  align="center"  style="display: flex; align-items: flex-start; justify-content: center;">
-
-<img  alt="buscando usuarios pelo id"  src="https://uploaddeimagens.com.br/images/004/045/636/full/imagem_2022-10-01_174750304.png?1664657271"  width="1080px">
-
-</p>
-
-  
-
-## 🛠 Tecnologias
-
-  ![NodeJS](https://img.shields.io/badge/NodeJS-16.13.2-green) ![npm](https://img.shields.io/badge/npm-8.1.2-purple) ![mongo](https://img.shields.io/badge/MongoDB-5.0.6-orange)
-
-As seguintes ferramentas foram usadas na construção do projeto:
-
-  
-
-####  [NodeJS](https://nodejs.org/), [Express](https://expressjs.com), [MongoDB](https://www.mongodb.com/)
-
-  
-
-> Veja o arquivo [package.json](https://github.com/arielmell0/Infleux-coding-challenge/blob/ad-server/package.json)
-
-  
 
 ## 🦸 Autor
 

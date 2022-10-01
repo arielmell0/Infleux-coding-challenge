@@ -9,7 +9,6 @@ export const CreateCampaign = () => {
   const history = useHistory()
   const [campaignName, setCampaignName] = useState()
   const [advertiser, setAdvertiser] = useState()
-  const [keyWords, setKeyWords] = useState()
   const [conversionType, setConversionType] = useState()
   const [target, setTarget] = useState()
   const [BID, setBID] = useState()
@@ -21,7 +20,6 @@ export const CreateCampaign = () => {
     const data = {
       name: campaignName,
       advertiser,
-      keyWords,
       conversionType,
       target,
       bid: BID
@@ -47,11 +45,6 @@ export const CreateCampaign = () => {
         <FormDiv>
           <label htmlFor="advertiser">Advertiser</label>
           <input value={ advertiser } onChange={(e) => setAdvertiser(e.target.value)} type="text" id="advertiser" />
-        </FormDiv>
-
-        <FormDiv>
-          <label htmlFor="keyWords">Key Words:</label>
-          <input value={ keyWords } onChange={(e) => setKeyWords(e.target.value)} id="text"></input>
         </FormDiv>
 
         <FormDiv>
