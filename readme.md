@@ -8,7 +8,7 @@ Projeto de uma api que possibilida anunciantes criarem uma campanha publicitári
 
   
 
-Criado durante o infleux conding challenge.
+Criado durante o infleux coding challenge.
 
 ## Como iniciar o projeto
 #### Nesse projeto eu usei o mongo atlas para conectar ao banco de dados, você deve criar uma váriavel de ambiente .env na raiz do projeto aonde irá colocar a string que o próprio mongo atlas irá lhe fornecer, assim você terá um servidor gratuito rodando na cloud. Apenas crie o seu banco de dados e depois conecte a sua aplicação como mostrado abaixo.
