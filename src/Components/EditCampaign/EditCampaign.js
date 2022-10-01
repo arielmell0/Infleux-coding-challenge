@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import styled from 'styled-components';
 import api from '../../services/campaignsService.js'
 import { Container } from "../Container/Container.js";
-import { DeleteButton, SubmitButton } from '../Buttons/Buttons.js';
+import { DeleteButton, EditButton, SubmitButton } from '../Buttons/Buttons.js';
 import { ListCampaigns } from '../ListCampaigns/ListCampaigns.js';
 
 export const EditCampaign = (props) => {
@@ -78,7 +78,7 @@ export const EditCampaign = (props) => {
           <input value={ target } onChange={(e) => setTarget(e.target.value)} id="target"></input>
         </FormDiv>
 
-        <SubmitButton type="submit">Edit</SubmitButton>
+        <EditButton style={{width: "100%"}} type="submit">Edit</EditButton>
 
         { campaignCreatedWithSucess && (
           <SucessFeedBack>Campaign edited with sucess! </SucessFeedBack>

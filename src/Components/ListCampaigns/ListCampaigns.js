@@ -9,14 +9,25 @@ export const ListCampaigns = (object) => {
   const history = useHistory()
 
   useEffect( () => {
-      api.get('fetch').then(({data}) => {
-        setListCampaigns(data)
-      });
-  }, []);
+    getCampaigns()
+  }, [listCampaigns]);
+
+  const getCampaigns = () => {
+    api.get('fetch').then(({data}) => {
+      setListCampaigns(data)
+    });
+  }
 
   const editCampaign = (id) => {
     console.log(id)
     history.push(`edit-campaign/${id}`)
+  }
+
+  const deleteCampaign = (id) => {
+    console.log(id)
+    api.delete(`fetch/${id}`)
+
+    getCampaigns()
   }
 
   return (
@@ -42,7 +53,7 @@ export const ListCampaigns = (object) => {
                   <td>{ item.bid }</td>
                   <td>{ item.conversionType.toUpperCase() }</td>
                   <td><EditButton onClick={ () => editCampaign(item._id) }>Editar</EditButton></td>
-                  <td><DeleteButton>Deletar</DeleteButton></td>
+                  <td><DeleteButton onClick={ () => deleteCampaign(item._id) }>Deletar</DeleteButton></td>
                 </tr>
               ))
             }

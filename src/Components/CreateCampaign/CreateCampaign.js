@@ -40,29 +40,29 @@ export const CreateCampaign = () => {
     <Container>
       <form onSubmit={ handleSubmit }>
         <FormDiv>
-          <label for="name">Campaign name:</label>
+          <label htmlFor="name">Campaign name:</label>
           <input value={ campaignName } onChange={(e) => setCampaignName(e.target.value)} type="text" id="name" />
         </FormDiv>
 
         <FormDiv>
-          <label for="advertiser">Advertiser</label>
+          <label htmlFor="advertiser">Advertiser</label>
           <input value={ advertiser } onChange={(e) => setAdvertiser(e.target.value)} type="text" id="advertiser" />
         </FormDiv>
 
         <FormDiv>
-          <label for="keyWords">Key Words:</label>
+          <label htmlFor="keyWords">Key Words:</label>
           <input value={ keyWords } onChange={(e) => setKeyWords(e.target.value)} id="text"></input>
         </FormDiv>
 
         <FormDiv>
-          <label for="bid">BID</label>
+          <label htmlFor="bid">BID</label>
           <input value={ BID } onChange={(e) => setBID(e.target.value)} id="bid"></input>
         </FormDiv>
 
         <FormDiv>
-          <label for="conversionType">Conversion type:</label>
-          <select value={ conversionType } onChange={(e) => setConversionType(e.target.value)} id="conversionType">
-            <option selected>Select an option:</option>
+          <label htmlFor="conversionType">Conversion type:</label>
+          <select defaultValue="dwadaw" value={ conversionType } onChange={(e) => setConversionType(e.target.value)} id="conversionType">
+            <option >Select an option:</option>
             <option value="cpm">CPM (Cost per milion)</option>
             <option value="cpc">CPC (Cost per click)</option>
             <option value="cpa">CPA (Cost per a)</option>
@@ -70,7 +70,7 @@ export const CreateCampaign = () => {
         </FormDiv>
 
         <FormDiv>
-          <label for="target">Target:</label>
+          <label htmlFor="target">Target:</label>
           <input value={ target } onChange={(e) => setTarget(e.target.value)} id="target"></input>
         </FormDiv>
 

@@ -15,10 +15,10 @@ function App() {
       <Menu />
 
       <Switch>
-        <Route path="/create-campaign" component={CreateCampaign} />
-        <Route path="/list-campaign" component={ListCampaigns} />
-        <Route path="/edit-campaign/:id" component={EditCampaign} />
-        <Route path="/" component={ Home } />
+        <Route path="/edit-campaign/:id" component={EditCampaign} exact/>
+        <Route path="/create-campaign" component={CreateCampaign} exact/>
+        <Route path="/list-campaign" component={ListCampaigns} exact/>
+        <Route path="/" component={ Home } exact/>
       </Switch>
     </>      
   );
