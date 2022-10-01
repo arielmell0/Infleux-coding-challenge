@@ -25,12 +25,14 @@ export const ListCampaigns = (object) => {
 
         <tbody>
             {
-              listCampaigns.map((item, index) => (
+              listCampaigns.map((item) => (
                 <tr>
-                  <td key={ index }>{ item.name }</td>
-                  <td key={ index }>{ item.advertiser }</td>
-                  <td key={ index }>{ item.bid }</td>
-                  <td key={ index }>{ item.conversionType }</td>
+                  <td key={ item.name }>{ item.name }</td>
+                  <td key={ item.name }>{ item.advertiser }</td>
+                  <td key={ item.name }>{ item.bid }</td>
+                  <td key={ item.name }>{ item.conversionType }</td>
+                  <td key={ item.name }><button>Editar</button></td>
+                  <td key={ item.name }><button>Deletar</button></td>
                 </tr>
               ))
             }

@@ -9,7 +9,18 @@ const GlobalStyle = createGlobalStyle`
   th, td {
     padding: 0 5vw 0 5vw;
     text-align: center;
-  };  
+  };
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  };
+
+  label {
+    width: 30px;
+  }
 `;
  
 export default GlobalStyle;
