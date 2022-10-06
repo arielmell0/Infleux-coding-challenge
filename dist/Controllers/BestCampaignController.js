@@ -55,6 +55,20 @@ exports.postCampaign = postCampaign;
 const getCampaign = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const campaign = yield CampaignModel_1.default.find();
+        const processaBID = () => {
+            const headerLanguage = req.get('Accept-Language');
+            const languageRegExp = [/pt-br/gi, /en./gi];
+            console.log(headerLanguage);
+            campaign.forEach(item => {
+                if (headerLanguage === null || headerLanguage === void 0 ? void 0 : headerLanguage.match(languageRegExp[0])) {
+                    if (item.target.match(/bra?(s|z)il/gi)) {
+                        item.bid += 1000;
+                        console.log(item.target);
+                    }
+                }
+            });
+        };
+        processaBID();
         res.status(200).json(campaign);
     }
     catch (error) {

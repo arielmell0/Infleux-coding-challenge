@@ -2,7 +2,7 @@
 // factor for the best campaign
 // area (country) -> bid (price) -> publisher content (who will atract leads with the content)
 import CampaignModel from "../Models/CampaignModel"
-import { Request, Response } from 'express'
+import { Request, response, Response } from 'express'
 
 export const postCampaign = async (req: Request, res: Response) => {
     interface Campaign {
@@ -59,7 +59,23 @@ export const postCampaign = async (req: Request, res: Response) => {
 export const getCampaign = async (req: Request, res: Response) => {
     try {
         const campaign = await CampaignModel.find()
+        
+        const processaBID = () => {
+            const headerLanguage = req.get('Accept-Language')
+            const languageRegExp = [/pt-br/gi, /en./gi]
+            console.log(headerLanguage)           
 
+            campaign.forEach(item => {
+                if(headerLanguage?.match(languageRegExp[0])) {
+                    if(item.target.match(/bra?(s|z)il/gi)) {
+                        item.bid += 1000
+                        console.log(item.target)
+                    }
+                }
+            })
+        }
+
+        processaBID()
         res.status(200).json(campaign)
     } catch(error) {
         res.status(500).json({ erro: error })
